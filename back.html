@@ -81,12 +81,11 @@
                         "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmFiZTYyNTRiY2RlMTAwMTc2MTZhYjQiLCJpYXQiOjE2MDUxMDcwNzksImV4cCI6MTYwNjMxNjY3OX0.qO8l0u-VgxOZulP_GPUH8A9s1MhZyeCC2O8PQyu992A"
                     })
                 });
-                let event = await response
-                    .json();
+                let event = await response.json();
                 document.querySelector("#name").value = event.name;
                 document.querySelector("#description").value = event.description;
                 document.querySelector("#brand").value = event.brand;
-                document.querySelector("#imageUrl").value = imageUrl
+                document.querySelector("#imageUrl").value = event.imageUrl
                 document.getElementById("price").value = event.price;
             }
         };
@@ -133,7 +132,7 @@
                 }
                 if (response.ok) {
                     spinner.classList.toggle("d-none");
-                    alert(`Event ${id ? "updated" : "created"} successfully`);
+                    alert(`Product ${id ? "updated" : "created"} successfully`);
                     location.assign("front.html");
                 } else {
                     spinner.classList.toggle("d-none");
